@@ -1,5 +1,11 @@
 # pg_serializer: Very fast JSON serializer using Django and PostgreSQL
 
+[![PyPI version](https://badge.fury.io/py/pg-serializer.svg)](https://pypi.org/project/pg-serializer/)
+[![Python Version](https://img.shields.io/badge/python-3.8-blue.svg)](https://docs.python.org/3/whatsnew/3.8.html)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![pipeline status](https://gitlab.com/kozlek/pg_serializer/badges/master/pipeline.svg)](https://gitlab.com/kozlek/pg_serializer/-/commits/master)
+[![coverage report](https://gitlab.com/kozlek/pg_serializer/badges/master/coverage.svg)](https://gitlab.com/kozlek/pg_serializer/-/commits/master)
+
 ## Overview 
 
 > Django REST framework is a powerful and flexible toolkit for building Web APIs.
@@ -16,7 +22,7 @@ since version 9.2, and it is far more faster than Python's one.
 ## Installation
 
 ```bash
-pip install pg_serializer
+pip install pg-serializer
 ```
 
 ## Basic usage
