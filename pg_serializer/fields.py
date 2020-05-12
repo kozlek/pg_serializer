@@ -71,8 +71,6 @@ class DecimalField(Field):
     django_field_types = (fields.DecimalField,)
     cast_type = fields.DecimalField
 
-    default_coerce_to_string = False
-
     def __init__(self, coerce_to_string: bool = None, **kwargs):
         super().__init__(**kwargs)
         self.coerce_to_string = (
