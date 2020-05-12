@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.test.signals import setting_changed
 
-from rest_framework import settings
+from rest_framework.settings import APISettings as DrfAPISettings
 
 DJANGO_SETTINGS_KEY = "PG_SERIALIZER"
 
@@ -19,7 +19,14 @@ IMPORT_STRINGS = ()
 REMOVED_SETTINGS = ()
 
 
-class APISettings(settings.APISettings):
+class APISettings(DrfAPISettings):
+    def __init__(self, user_settings=None, defaults=None, import_strings=None):
+        if user_settings:
+            self._user_settings = self.__check_user_settings(user_settings)
+        self.defaults = defaults or DEFAULTS
+        self.import_strings = import_strings or IMPORT_STRINGS
+        self._cached_attrs = set()
+
     @property
     def user_settings(self):
         if not hasattr(self, "_user_settings"):
