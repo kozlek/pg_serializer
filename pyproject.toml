@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pg_serializer"
-version = "0.1.1"
+version = "0.1.2"
 description = "Fast serializers for Django using Postgres database"
 license = "MIT"
 authors = ["Thomas Berdy <thomas.berdy@outlook.com>"]
