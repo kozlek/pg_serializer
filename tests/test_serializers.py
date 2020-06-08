@@ -44,3 +44,8 @@ def test_serialize_orders(orders):
         drf_serializers.OrderSerializer(Order.objects.all(), many=True).data
     )
     assert pg_result == drf_result
+
+
+def test_serialize_no_data():
+    pg_result = OrderSerializer(queryset=Order.objects.all(), as_bytes=True).json
+    assert pg_result == b"[]"

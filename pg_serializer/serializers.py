@@ -119,9 +119,14 @@ class ModelSerializer(metaclass=SerializerMetaclass):
     def to_representation(self) -> str or bytes:
         if self.as_bytes:
             with db_str_as_bytes():
-                return self._run_query()
+                res = self._run_query()
         else:
-            return self._run_query()
+            res = self._run_query()
+
+        if res is None:
+            res = b"[]" if self.as_bytes else "[]"
+
+        return res
 
     @cached_property
     def json(self) -> str or bytes:
